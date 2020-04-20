@@ -58,10 +58,12 @@
     }
     {
         - hour < 1 :
-            ~ hour = 12
-            ~ ampm = "pm"
-        - hour >= 13 :
-            ~ hour -= 12
+            ~ hour += 12
+        - hour >= 12 :
+            {
+                - hour >= 13:
+                    ~ hour -= 12
+            }
             ~ ampm = "pm"
     }
     ~ return "{compHour}{hour}:{compMin}{minutes} {ampm}"
