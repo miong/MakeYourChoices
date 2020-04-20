@@ -89,28 +89,31 @@ Futhermore soon... This project is not finished yet. #CLASS: neutral_ending
 -> MYC_END
 
 === MYC_END ===
-+ See affinities.
++ [See affinities]
     -> MYC_SHOW_AFFINITIES
-+ See status.
++ [See status]
     -> MYC_SHOW_ACTORS_STATUS
-+ Try again from the beginning.
++ [Try again from the beginning]
     -> MYC_START_GAME
-+ Return to the menu.
++ [Return to the menu]
     -> MYC_MENU
 
 === MYC_SHOW_ACTORS_STATUS ===
+Game status #CLASS: choice_made
 Alive   : {print_list(L_ACTORS_ALIVE,"No one")}
 Killed  : {print_list(LIST_INVERT(L_ACTORS_ALIVE),"No one")}
 In jail : {print_list(L_ACTORS_INJAIL," No one")}
 -> MYC_END
 
 === MYC_SHOW_AFFINITIES ===
-Affinities board :
-Order of answers are YOU,MIKE,STEVE,RACHELLE,VANESSA.
-YOU : {show_affinity(YOU,YOU)},{show_affinity(YOU,MIKE)},{show_affinity(YOU,STEVE)},{show_affinity(YOU,RACHELLE)},{show_affinity(YOU,VANESSA)}
-MIKE : {show_affinity(MIKE,YOU)},{show_affinity(MIKE,MIKE)},{show_affinity(MIKE,STEVE)},{show_affinity(MIKE,RACHELLE)},{show_affinity(MIKE,VANESSA)}      
-STEVE : {show_affinity(STEVE,YOU)},{show_affinity(STEVE,MIKE)},{show_affinity(STEVE,STEVE)},{show_affinity(STEVE,RACHELLE)},{show_affinity(STEVE,VANESSA)}
-RACHELLE : {show_affinity(RACHELLE,YOU)},{show_affinity(RACHELLE,MIKE)},{show_affinity(RACHELLE,STEVE)},{show_affinity(RACHELLE,RACHELLE)},{show_affinity(RACHELLE,VANESSA)}
-VANESSA : {show_affinity(VANESSA,YOU)},{show_affinity(VANESSA,MIKE)},{show_affinity(VANESSA,STEVE)},{show_affinity(VANESSA,RACHELLE)},{show_affinity(VANESSA,VANESSA)}
+Affinities #CLASS: choice_made
+Affinities board #TABLE
+$YOU$MIKE$STEVE$RACHELLE$VANESSA #TABLEROW
+YOU${show_affinity(YOU,YOU)}${show_affinity(YOU,MIKE)}${show_affinity(YOU,STEVE)}${show_affinity(YOU,RACHELLE)}${show_affinity(YOU,VANESSA)} #TABLEROW
+MIKE${show_affinity(MIKE,YOU)}${show_affinity(MIKE,MIKE)}${show_affinity(MIKE,STEVE)}${show_affinity(MIKE,RACHELLE)}${show_affinity(MIKE,VANESSA)} #TABLEROW
+STEVE${show_affinity(STEVE,YOU)}${show_affinity(STEVE,MIKE)}${show_affinity(STEVE,STEVE)}${show_affinity(STEVE,RACHELLE)}${show_affinity(STEVE,VANESSA)} #TABLEROW
+RACHELLE${show_affinity(RACHELLE,YOU)}${show_affinity(RACHELLE,MIKE)}${show_affinity(RACHELLE,STEVE)}${show_affinity(RACHELLE,RACHELLE)}${show_affinity(RACHELLE,VANESSA)} #TABLEROW
+VANESSA${show_affinity(VANESSA,YOU)}${show_affinity(VANESSA,MIKE)}${show_affinity(VANESSA,STEVE)}${show_affinity(VANESSA,RACHELLE)}${show_affinity(VANESSA,VANESSA)} #TABLEROW
+#TABLE END
 -> MYC_END
 
