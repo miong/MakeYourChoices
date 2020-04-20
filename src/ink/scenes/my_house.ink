@@ -188,7 +188,7 @@ His coworker says no with his head.
 "But if anything strange happens in the next days, please call us." #CLASS: others_speak
 "You'll leave without doing anything ?" #CLASS: you_speak
 "We have no clue, and the person hasn't stolen anything, mister Jensen." #CLASS: others_speak
-"The report will say that a lapper was seen in the neighborhood." #CLASS: others_speak
+"The report will say that a lapper was seen in the neighbourhood." #CLASS: others_speak
 "We will increase the number of patrols. Don't worry." #CLASS: others_speak
 "If there is someone, we will catch him." #CLASS: others_speak
 "All rigth. Thank you officer." #CLASS: you_speak

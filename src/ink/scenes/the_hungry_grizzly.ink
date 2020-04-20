@@ -119,7 +119,7 @@ You see this beautiful women comming to you.
 She accompanies you to a seat and gives you the menu.
 "I let you choose your meal. Let me know when you're ready." #CLASS: vanessa_speak
 You're looking at her. She's going to the bar and talk with the other customers.
-"Danm, she's sweet as honey" you're thinking.
+"Damn, she's sweet as honey" you're thinking.
 You look at the menu, but she's still on your mind.
 You wave at her and she comes.
 "You have choosen, mister ?" #CLASS: vanessa_speak
