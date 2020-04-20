@@ -9,6 +9,7 @@
 	var audioMuted = false;
 	var currentAudio = ""
 	var currentAudioChanged = false;
+	var currentTable = null;
 
     // Global tags - those at the top of the ink file
     // We support:
@@ -55,6 +56,8 @@
             // Get ink to generate the next paragraph
             var paragraphText = story.Continue();
             var tags = story.currentTags;
+			var isTable = false;
+			var isTableRow = false;
             
             // Any special tags included with this line
             var customClasses = [];
@@ -81,6 +84,14 @@
 					currentAudioChanged = currentAudio != oldAudio;
 					setAudio();
                 }
+				//TABLE
+				else if( tag == "TABLE" ) {
+					isTable = true;
+				}
+				//TABLEROW
+				else if( currentTable != null && tag == "TABLEROW" ) {
+					isTableRow = true;
+				}
 
                 // CLASS: className
                 else if( splitTag && splitTag.property == "CLASS" ) {
@@ -102,19 +113,50 @@
                     }
                 }
             }
+			
+			if( !isTableRow && currentTable != null )
+			{
+				storyContainer.appendChild(currentTable);
+				currentTable = null;
+			}
 
             // Create paragraph element (initially hidden)
-            var paragraphElement = document.createElement('p');
-            paragraphElement.innerHTML = paragraphText;
-            storyContainer.appendChild(paragraphElement);
+			if( isTable ) {
+				var currentTable = document.createElement("table");
+				var thead = currentTable.createTHead();
+				var row = thead.insertRow();
+				var cell = row.insertCell();
+				var text = document.createTextNode(paragraphText);
+				cell.appendChild(text);
+				cell.colSpan = 1;
+			}
+			else if( isTableRow ) {
+				var tbody = currentTable.createTBody();
+				var row = tbody.insertRow();
+				var contents = paragraphText.split("$");
+				var rowCols = contents.length;
+				var headColSpan = currentTable.rows[0].cells[0].colSpan
+				currentTable.rows[0].cells[0].colSpan = Math.max(rowCols, headColSpan);
+				for (c in contents) {
+					var cell = row.insertCell();
+					var text = document.createTextNode(contents[c]);
+					cell.appendChild(text);
+				}
+			}
+			else {
+				var paragraphElement = document.createElement('p');
+				paragraphElement.innerHTML = paragraphText;
+				storyContainer.appendChild(paragraphElement);
             
-            // Add any custom classes derived from ink tags
-            for(var i=0; i<customClasses.length; i++)
-                paragraphElement.classList.add(customClasses[i]);
+				// Add any custom classes derived from ink tags
+				for(var i=0; i<customClasses.length; i++)
+					paragraphElement.classList.add(customClasses[i]);
+				
+				// Fade in paragraph after a short delay
+				showAfter(delay, paragraphElement);
+				delay += 200.0;
+			}
 
-            // Fade in paragraph after a short delay
-            showAfter(delay, paragraphElement);
-            delay += 200.0;
         }
 
         // Create HTML choices from ink choices

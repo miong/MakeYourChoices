@@ -2,11 +2,11 @@
 #CLEAR
 #AUDIO : main_menu
 Game#CLASS: menu
-Developed by Giovanni Mion
+Developed by Giovanni Mion and Lawrencio Rasamoelison.
 Using html5, javascript and ink.
 Story #CLASS: menu
-Story by Giovanni Mion
-Special thanks to Nouzha Mion
+Story by Giovanni Mion.
+Special thanks to Nouzha Mion, Thomas Noaïc and Lawrencio Rasamoelison.
 Musics #CLASS: menu
 CC0 contents from opengameart.org :
 excited horror sound by remaxim

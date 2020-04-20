@@ -295,6 +295,26 @@ p.choice a {
     margin-bottom: 10px;
 }
 
+table {
+	margin-left:auto;
+	margin-right:auto;
+	table-layout: fixed;
+	width: 100%;
+}
+
+table,
+td {
+    border: 1px solid #333;
+	text-align: center;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+	text-align: center;
+}
+
 /* animations */
 @keyframes type {
 	0% {
