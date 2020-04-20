@@ -3,15 +3,15 @@
 -> save_or_continu("Road to Lake side", -> road_to_LS_TT, -> driving_to_LS_part_one)
 
 === driving_to_LS_part_one ===
-Leaving the neighborhood, you remember all the bad things that happened to you in the last few months.
+Leaving the neighbourhood, you remember all the bad things that happened to you in the last few months.
 Your girlfriend who left you because you were taking things too seriously.
 "And that the better thing that happened to me lately..." you sigh #CLASS: you_speak
-You thought she was cheating on you but without evidences. But danm, she was beautiful and lovely.
+You thought she was cheating on you but without evidence. But damn, she was beautiful and lovely.
 That's why you haven't broke up with her before she did.
-But what really hurted you was the lost of your job.
+But what really hurt was the lost of your job.
 Even if there were less customers for the compagny since months, why fire the head of the electronics division.
 "David, i'm sorry about that but we have to reduce the wage bill...", Thibault said when he summoned you in his office.
-"Fuck off Thibault!" you shout out #CLASS: you_speak #CLASS: scream
+"Fuck off Thibault!" you shout out. #CLASS: you_speak #CLASS: scream
 Single and Jobless at 28 years old, that's not a reason to depress.
 That's why you packed your stuff, and decided to join Steve, a good friend from engineering school, who had offered you a job into his start-up.
 Looking at the landscape, lost in your thoughts, you're driving on the highway without paying attention to the passing of time.
@@ -22,7 +22,7 @@ Looking at the landscape, lost in your thoughts, you're driving on the highway w
 ~ V_CURRENT_TIME += 2.25
 ~ V_IS_HUNGRY = true
 When suddenty the sound of your stomach takes you out of your thoughts.
-Realising it's {print_current_time()}, you're thinking that you hadn't searched a place to eat during the trip planning.
+Realising it's {print_current_time()}, you're thinking that you hadn't search a place to eat during the trip planning.
 -> choose_where_to_eat_intro
 
 === choose_where_to_eat_intro ===
