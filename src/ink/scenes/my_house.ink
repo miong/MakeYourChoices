@@ -3,8 +3,8 @@
 -> save_or_continu("Your house", -> my_house_TT, to)
 
 === receive_keys ===
-You're drving back to the residencial part of the city.
-Your GPS tells that you've arrived. You see a nice house with a floor.
+You're driving back to the residencial part of the city.\
+Your GPS tells that you've arrived. You see a nice house with a floor.\
 You park the car, and wait there a bit.
 Two minutes later, Steve arrives with the real estate agent.
 "This is your new house" said the estate agent. #CLASS: others_speak
@@ -31,11 +31,12 @@ The house is clean. Furniture is included in the rental.
 It took you one hour to unload and install all your stuff.
 ~ V_CURRENT_TIME += 1.0
 Now you feel home. You enjoy the ambient calm.
-Your tools are the last thinks you need to unload.
-You'll return the truck tomorrow, so you decide to take a break.
-You start to watch the TV.
+Your tools are the last things you need to unload.\
+You rented the truck for two days, so you device to return the\
+truck tomorrow, and take a break.\
+You start to watch the TV, comfy in the couch.
 While you're watching a replay of a good football game, you hear the doorbell.
-Comming at the door, you see a woman with a pie.
+Coming at the door, you see a woman with a pie.
 "Hi, I'm you're new neighbor. My name is Rachelle." #CLASS: rachelle_speak
 "Hello, nice to meet you. I'm David." #CLASS: you_speak
 "I saw you while you were settling down." #CLASS: rachelle_speak
@@ -68,18 +69,18 @@ She is smilling at you and gives you the pie.
 -
 "Thank you Rachelle. I'll tell you how tasty was the pie next time we meet." #CLASS: you_speak
 "I'm waiting for your reviews, David." #CLASS: rachelle_speak
-She's going back to her house.
+She's going back to her house.\
 You see she's your left neighbor.
 Looking at your smartphone you see it's {print_current_time()}.
-You decide to finish to unload the truck.
+You decide to finish to unload the truck.\
 You take all the tools to put them in the cellar.
 // TIME : 
 {
     - V_KNOW_FOR_THE_CELLAR:
-        You take a look at the cellar doors leading to the back yard of the house.
+        You take a look at the cellar doors leading to the back yard of the house.\
         The door doesn't seem to be damaged.
         But the locket is bent.
-        You thnk you can fix it.
+        You thnk you can fix it.\
         Searching in the tools for a hammer, you found out you don't own one.
         "Maybe i could buy one at the shopping center" you think. #CLASS: you_speak
         + [Go at the shoping center]
@@ -111,10 +112,11 @@ The window overlooks the back yard.
 You're thinking about the people you met, about the job you'll start.
 + [At this moment...]
     #AUDIO: horror_ambiance1
-    At this moment, a strange mouvement catches your eyes.
-    And there, near to a tree and the fence, you see a silhouette.
-    It seems to be a man standing there.
-    His face is covered by the night.
+    At this moment, a strange mouvement catches your eyes.\
+    And there, near to a tree and the fence, you see a silhouette.\
+    It seems to be a man standing there.\
+    Unfortunatly, the light was so dim as the\
+    night was falling that you couldn't see his face.
     "Hey ! It's a private property !" you shout out, pissed off. #CLASS: you_speak
     The man is nor moving, neither responding.
     You're thinking about what you can do.
@@ -135,9 +137,9 @@ You're thinking about the people you met, about the job you'll start.
         You decided to go in the back yard. #CLASS: choice_made
         You run into the stairs.
         Once at the doors, you hesitate.
-        Maybe the guy have a knife or a gun.
-        You take a quick look arround you. Nothing can help.
-        You go quickly in the kitchen to take a knife.
+        Maybe that guy have a knife or a gun !
+        You take a quick look around you. Nothing can help.
+        You quickly go in the kitchen and grab a knife.
         Then you open the doors, and see no one in the garden.
 -
 You go to the fence. Still no one.

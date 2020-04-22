@@ -3,7 +3,7 @@
 -> save_or_continu("The driver's kitchen", -> drivers_kitchen_TT, -> going_to_drivers_kitchen)
 
 === going_to_drivers_kitchen ===
-You're taking the exit to the rest area.
+You're taking the exit to the rest area.\
 Once parked, you look at the restaurant.
 Nothing special at first glance.
 -> entering_drivers_kitchen
@@ -34,7 +34,7 @@ Maybe that was a mistake to eat there...
 -> leaving_drivers_kitchen
 
 === leaving_drivers_kitchen ===
-You leave the fast food, a bit bloated, but that's ok.
+You leave the fast food, a bit bloated, but that's ok.\
 Starting the engine, you think "it's time to go to my new house".
 ~ V_CURRENT_TIME += 1.0
 Your watch indicates {print_current_time()}.

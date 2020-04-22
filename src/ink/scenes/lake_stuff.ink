@@ -9,8 +9,8 @@ It's {print_current_time()}.
 {
     - V_CURRENT_TIME < 16.00 :
         It's still open.
-        You enter and go to the DIY store.
-        You found a hammer and go to the cash register.
+        You enter and go to the DIY store.\
+        You found a hammer and go to the cash register.\
         Once you've payed you go to you're car and head for your house.
         ~ V_CURRENT_TIME += 0.5
         ~ V_HAVE_THE_HAMMER = true
