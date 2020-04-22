@@ -5,34 +5,34 @@
 // When we arrive to lake side
 
 === hungry_driver_and_sweet_waitress ===
-You approach the diner's doors.
-A sign indicates that service ends at {print_time(14.0)}.
-It's {print_current_time()}.
+You approach the diner's doors.\
+A sign indicates that service ends at {print_time(14.0)}.\
+It's {print_current_time()}. 
 {V_CURRENT_TIME >= 14.0 : -> hungry_and_late }
 {V_CURRENT_TIME < 14.0  : -> hungry_and_at_time} 
 
 === hungry_and_late ===
 ~ affect_affinity(YOU,VANESSA,C_STAT_HUGE_UP)
 ~ affect_affinity(VANESSA,YOU,C_STAT_LIL_UP)
-It's too late.
+It's too late.\
 You're turning back to your car when you hear a voice.
 "Hi, can I help you sir ?" #CLASS: vanessa_speak
-Looking at the doors, you see a pretty young waitress who's smilling at you.
+Looking at the doors, you see a pretty young waitress who's smilling at you.\
 You come closer without taking your eyes of her.
 "Hello, sorry to bother you, I wanted to eat there but apparently it's too late." #CLASS: you_speak
 "Effectively, the service is ended. But it's seems that you've done a lot of road. #CLASS: vanessa_speak
-You're not from here mister ?" #CLASS: vanessa_speak
-"Well, I'm new here. My name is David. You're the fisrt person I meet from Lake side." #CLASS: you_speak
+You're not from here, mister... ?" #CLASS: vanessa_speak
+"David. My name is David. And yes I'm new here. In fact, you're the first person I meet from Lake side." #CLASS: you_speak
 She looks at you intensivly for a few seconds then she says :
-"Then welcome to Lake side David. I'm Vannesa." #CLASS: vanessa_speak
+"Then welcome to Lake side David. I'm Vanessa." #CLASS: vanessa_speak
 She takes a look inside.
 "I will not let you hungry for you arrival. You'll need to gain strength and to relax a bit." #CLASS: vanessa_speak
 You feel a bit embarrassed annoying the waitress after her service.
 "No, i'll find somewhere else to eat..." #CLASS: you_speak
 "A {V_CURRENT_DAY}, at {print_current_time()}. Everything is closed, David." #CLASS: vanessa_speak
 "Come on, please enter while i'll make you a sandwich" she said with a little wink. #CLASS: vanessa_speak
-You enter the diner.
-She shows you the bar where you have a seat.
+You enter the diner.\
+She shows you the bar where you have a seat.\
 She goes into the kitchen and comes back with some bread, ham and cheese.
 "So what bring you to Lake side David ?" she says while making the sandwich.#CLASS: vanessa_speak
 "Taking control of my life. Starting a new job."  #CLASS: you_speak
@@ -87,7 +87,7 @@ She gives you the sandwich that looks yummy.
             {affect_affinity(YOU,VANESSA,C_STAT_MEDIUM_UP)}
             {affect_affinity(VANESSA,YOU,C_STAT_MEDIUM_UP)}
             You asked her when uou could see her again. #CLASS: choice_made
-            "We are exeptionnaly closed tonight." #CLASS: vanessa_speak
+            "We are exceptionally closed tonight." #CLASS: vanessa_speak
             "But tomorrow, if you come to eat, I'll be there." #CLASS: vanessa_speak
             "Unfortunately, tomorrow, I have to finish to settle the house and to return the truck." #CLASS: you_speak
             "But, maybe Steve and I will come to eat there {V_CURRENT_DAY+2}." #CLASS: you_speak
@@ -110,8 +110,8 @@ She gives you the sandwich that looks yummy.
 ~ V_CURRENT_TIME += 1.0
 {affect_affinity(YOU,VANESSA,C_STAT_LIL_UP)}
 {affect_affinity(VANESSA,YOU,C_STAT_LIL_UP)}
-You open the doors.
-There is only two guys at the bar.
+You open the doors.\
+There is only two guys at the bar.\
 "Welcome to The hungry grizzly" says the waitress. #CLASS: vanessa_speak
 You see this beautiful women comming to you.
 "Please take a seat, I'll take care of you." #CLASS: vanessa_speak
@@ -120,7 +120,7 @@ She accompanies you to a seat and gives you the menu.
 "I let you choose your meal. Let me know when you're ready." #CLASS: vanessa_speak
 You're looking at her. She's going to the bar and talk with the other customers.
 "Damn, she's sweet as honey" you're thinking.
-You look at the menu, but she's still on your mind.
+You look at the menu, but she's still on your mind.\
 You wave at her and she comes.
 "You have choosen, mister ?" #CLASS: vanessa_speak
 "Yes, I'll take a cheese burger and a diet coke please." #CLASS: you_speak
@@ -137,13 +137,13 @@ And she vanishes behind the bar.
 The guys at the bar stand up.
 "Vanessa, we're leaving. Thanks for the meal sweet heart." #CLASS: others_speak
 "See you soon Marc." #CLASS: vanessa_speak
-As the guys are leaving the room, you see Vanessa coming back with your plate.
-She disposes it on the table.
+As the guys are leaving the room, you see Vanessa coming back with your plate.\
+She disposes it on the table.\
 The burger seems yummy.
 "Thank you, Vanessa." #CLASS: you_speak
 "No problem my dear." #CLASS: vanessa_speak
-And you see her going back at the bar.
-You're eating and that really tastes good.
+And you see her going back at the bar.\
+You're eating and that really tastes good.\
 When you've had finished, she comes to you.
 "So, how was our speciality ?" #CLASS: vanessa_speak
 "Tasty !" #CLASS: you_speak
@@ -174,7 +174,7 @@ You stand up.
 "Yeah, i got to receive the keys of my new house." #CLASS: you_speak
 "Then, maybe i'll see you again with Steve." #CLASS: vanessa_speak
 "I hope so" you said smilling. #CLASS: you_speak
-You leave the hungry grizzly, jump in the car and head for your house.
+You leave the hungry grizzly, jump in the car and head for your house.\
 While driving, you text Steve to tell him you arrive home in 15 minutes.
 ~V_CURRENT_TIME += 0.25
 + [Continue]
