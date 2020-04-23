@@ -9,13 +9,6 @@
         }
     }
 
-    class Pair {
-        constructor(key, value) {
-            this.key = key;
-            this.value = value;
-        }
-    }
-
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
     var flatten = new TreeNode("Story begings", null);
@@ -161,7 +154,7 @@
         if (!fullViewChekcBox.checked) {
             cutUnchangingBranches(flatten);
         }
-        for (i = 0; i < finalNodes.length; i++) {
+        for (var i = 0; i < finalNodes.length; i++) {
             shortenSingleBranch(finalNodes[i]);
         }
     }
@@ -271,7 +264,7 @@
         };
         tree_structure.push(root);
 
-        for (i = 0; i < finalNodes.length; i++) {
+        for (var i = 0; i < finalNodes.length; i++) {
             drawPath(finalNodes[i], tree_structure, root);
         }
         new Treant(tree_structure);
@@ -296,7 +289,7 @@
     }
 
     function addUniqueDnode(elem, array) {
-        for (j = 1; j < array.length; j++) {
+        for (var j = 1; j < array.length; j++) {
             var item = array[j];
             if (item.text.name == elem.text.name && item.text.desc == elem.text.desc && item.parent == elem.parent) {
                 return;
@@ -420,22 +413,5 @@
         }
         return getFiliation(node.parent) + "." + node.value;
     }
-
-    function setContains(set, pair) {
-        var res = false;
-        var BreakException = {};
-        try {
-            set.forEach(function(val1, val2, set) {
-                if (val1.key == pair.key && val1.value == pair.value) {
-                    res = true;
-                    throw BreakException;
-                }
-            });
-        } catch (e) {
-            if (e !== BreakException) throw e;
-        }
-        return res;
-    }
-
 
 })(storyContent);
