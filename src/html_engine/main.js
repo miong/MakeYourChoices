@@ -135,7 +135,7 @@
                 var rowCols = contents.length;
                 var headColSpan = currentTable.rows[0].cells[0].colSpan
                 currentTable.rows[0].cells[0].colSpan = Math.max(rowCols, headColSpan);
-                for (c in contents) {
+                for (var c in contents) {
                     var cell = row.insertCell();
                     var text = document.createTextNode(contents[c]);
                     cell.appendChild(text);
