@@ -12,7 +12,7 @@ prepare_butler() {
     echo "Preparing butler..."
     download_if_not_exist http://dl.itch.ovh/butler/linux-amd64/head/butler butler
     chmod +x butler
-	./butler upgrade
+	./butler upgrade --assume-yes
 }
 
 prepare_and_push() {
