@@ -1,0 +1,13 @@
+language: bash
+
+stages:
+  - name: compile
+  - name: deploy
+    if: branch = release
+
+jobs:
+  include:
+    - stage: compile
+      script: ./compile.sh
+    - stage: deploy
+      script: ./auto-deploy.sh
