@@ -7,7 +7,9 @@ pull_request_rules:
       label: 
         add: ["merge-when-green"]
       comment:
-        message: Automatically set to merge when green. Add WIP status to avoid automated merge.
+        message: |
+          Automatically set to merge when green ( ˘ ³˘)♥.
+          Add WIP status to avoid automated merge if necessary.
   - name: Add reviewers 
     conditions:
       - base=master
@@ -120,7 +122,8 @@ pull_request_rules:
     actions:
       dismiss_reviews: {}
       comment:
-        message: New pull request implies new reviews ¯\_(ツ)_/¯.
+        message: |
+          New pull request implies new reviews ¯\\_(ツ)_/¯.
   - name: Delete head branch after merge
     conditions:
       - base=master
