@@ -8,6 +8,10 @@ stages:
 jobs:
   include:
     - stage: compile
-      script: ./compile.sh
+      script: 
+        - >
+            sudo apt update
+            sudo apt install mono-complete
+            ./compile.sh
     - stage: deploy
       script: ./auto-deploy.sh
