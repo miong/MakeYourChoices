@@ -12,10 +12,11 @@ prepare_butler() {
     echo "Preparing butler..."
     download_if_not_exist http://dl.itch.ovh/butler/linux-amd64/head/butler butler
     chmod +x butler
+	./butler upgrade --assume-yes
 }
 
 prepare_and_push() {
-    echo "Push $3 build to itch.io..."
+    echo "Push $2 build to itch.io $1:$3..."
     ./butler push $2 $1:$3
 }
 
