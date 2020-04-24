@@ -40,3 +40,4 @@ DOC : any documentation updates
 QA  : any quality fix that is not also a bug  
 FIX : the commit fix a bug from issues  
 STR : the commit concern only the story.  
+REL : the commit is a release (Preview or Release) (on release branch)
