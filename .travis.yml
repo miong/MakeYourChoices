@@ -3,9 +3,9 @@ language: bash
 stages:
   - name: compile
   - name: bundle
-    if: branch = release
+    if: branch IN (release, test_deploy)
   - name: deploy
-    if: branch = release
+    if: branch IN (release, test_deploy)
 
 jobs:
   include:

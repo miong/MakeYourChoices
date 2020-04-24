@@ -15,7 +15,7 @@ prepare_butler() {
 }
 
 prepare_and_push() {
-    echo "Push $3 build to itch.io..."
+    echo "Push $2 build to itch.io $1:$3..."
     ./butler push $2 $1:$3
 }
 
