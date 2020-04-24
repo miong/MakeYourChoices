@@ -1,0 +1,138 @@
+pull_request_rules:
+  - name: Set MWG on creation
+    conditions:
+      - base=master
+      - -label~=^.*
+    actions:
+      label: 
+        add: ["merge-when-green"]
+      comment:
+        message: Automatically set to merge when green. Add WIP status to avoid automated merge.
+  - name: Add reviewers 
+    conditions:
+      - base=master
+      - "#review-requested<1"
+    actions:
+      request_reviews:
+        users:
+          - law0
+          - miong
+          - thomasnohaic
+      comment:
+        message: Add reviewers ( ˘ ³˘)♥.
+  - name: Set DOC on creation
+    conditions:
+      - base=master
+      - title~=^\[DOC\].*
+    actions:
+      label: 
+        add: ["documentation"]
+      comment:
+        message: Add status from pull request title.
+  - name: Set DEV on creation
+    conditions:
+      - base=master
+      - title~=^\[DEV\].*
+    actions:
+      label: 
+        add: ["enhancement"]
+      comment:
+        message: Add status from pull request title.
+  - name: Set QA on creation
+    conditions:
+      - base=master
+      - title~=^\[QA\].*
+    actions:
+      label: 
+        add: ["Quality"]
+      comment:
+        message: Add status from pull request title.
+  - name: Set STR on creation
+    conditions:
+      - base=master
+      - title~=^\[STR\].*
+    actions:
+      label: 
+        add: ["Story"]
+      comment:
+        message: Add status from pull request title.
+  - name: Set FIX on creation
+    conditions:
+      - base=master
+      - title~=^\[FIX\].*
+    actions:
+      label: 
+        add: ["bug"]
+      comment:
+        message: Add status from pull request title.
+  - name: Set md on creation
+    conditions:
+      - base=master
+      - files~=^.*\.md
+    actions:
+      label: 
+        add: ["md"]
+      comment:
+        message: Add status from modified files types.
+  - name: Set ink on creation
+    conditions:
+      - base=master
+      - files~=^.*\.ink
+    actions:
+      label: 
+        add: ["ink"]
+      comment:
+        message: Add status from modified files types.
+  - name: Set js on creation
+    conditions:
+      - base=master
+      - files~=^.*\.js
+    actions:
+      label: 
+        add: ["js"]
+      comment:
+        message: Add status from modified files types.
+  - name: Set config on creation
+    conditions:
+      - base=master
+      - files~=^.*\.yml
+    actions:
+      label: 
+        add: ["config"]
+      comment:
+        message: Add status from modified files types.
+  - name: Automatic merge
+    conditions:
+      - "#approved-reviews-by>=1"
+      - "#changes-requested-reviews-by=0"
+      - status-success=Travis CI - Pull Request
+      - label!=WIP
+      - label=merge-when-green
+      - base=master
+    actions:
+      merge:
+        method: squash
+      comment:
+        message: Merged automatically ( ˘ ³˘)♥.
+  - name: Remove outdated reviews
+    conditions:
+      - base=master
+    actions:
+      dismiss_reviews: {}
+      comment:
+        message: New pull request implies new reviews ¯\_(ツ)_/¯.
+  - name: Delete head branch after merge
+    conditions:
+      - base=master
+      - merged
+    actions:
+      delete_head_branch: {}
+      comment:
+        message: Branch delete because merged (◠﹏◠).
+  - name: ask to resolve conflict
+    conditions:
+      - conflict
+    actions:
+      comment:
+        message: This pull request is now in conflicts. Could you fix it? (｡◕‿◕｡)
+ 

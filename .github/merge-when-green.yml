@@ -1,4 +1,0 @@
-requiredChecks:
-  - circleci
-requireApprovalFromRequestedReviewers: true
-mergeMethod: squash
