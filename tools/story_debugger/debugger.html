@@ -22,11 +22,6 @@
 <body class="dark">
 	<h1 class="story_title_transition" >story state debugger</h1>
     <div class="outerContainer">
-		<div>
-			<button id="StartAnalysis">Start Analysis</button>
-			<input type="checkbox" id="fullView">
-			Full view
-		<div>
 		<table id="varTable">
 			<thead>
 				<tr>
@@ -36,13 +31,21 @@
 				<tr>
 					<td>Name</td>
 					<td><input id="varName"></td>
-					<td><input type="checkbox" id="isListCheckBox">is a list</td>
 				</tr>
 				<tr>
 					<td>Detail point</td>
 					<td><input id="pointName"></td>
 				</tr>
+				<tr>
+					<td>Expected Value</td>
+					<td><input id="ValueInput"></td>
+				</tr>
 		</table>
+		<div>
+			<button id="StartAnalysis">Start Analysis</button>
+			<input type="checkbox" id="fullView">
+			Full view
+		<div>
 		<div id="loader" class="hide">Debug tree generated</div>
 		<div class="chart" id="flattenTree"></div>
     </div>

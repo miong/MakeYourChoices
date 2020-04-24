@@ -18,26 +18,33 @@
     var startButton = document.getElementById("StartAnalysis");
     var fullViewChekcBox = document.getElementById("fullView");
     var loader = document.getElementById("loader");
-    var isList = document.getElementById("isListCheckBox").checked;
 
     startButton.onclick = function start() {
         loader.classList.remove("hide");
-        isList = document.getElementById("isListCheckBox").checked;
+        var expectedVarContent = document.getElementById("ValueInput").value;
         var inputVal = document.getElementById("varName").value;
         var pointVal = document.getElementById("pointName").value;
         if (pointVal == "") {
             pointVal = "END"
+		}
+		if (inputVal == "") {
+            inputVal = "V_CURRENT_STORY_ENDING"
         }
-        performAnalysis(inputVal, pointVal);
+        performAnalysis(inputVal, pointVal, expectedVarContent);
     }
 
-    function performAnalysis(inputVal, pointVal) {
+    function performAnalysis(inputVal, pointVal, expectedVarContent) {
         dnodes.clear();
         finalNodes = [];
         flatten = new TreeNode("Story begings", null);
         story.ResetState();
         startStory()
         flatten.varContent = getVarValue(inputVal);
+		if(flatten.varContent == undefined)
+		{
+			loader.innerHTML = inputVal + " is not a valid variable name (Case sensitive)";
+			return;
+		}
         var savedState = story.state.ToJson();
         story.currentChoices.forEach(function(choice) {
             story.state.LoadJson(savedState);
@@ -45,9 +52,17 @@
         });
         var resSet = new Set();
         getPossibleValuesAt(flatten, pointVal, resSet);
-        loader.innerHTML = "Debug tree generated for " + inputVal + "<br>";
-        loader.innerHTML += inputVal + " possible values at " + pointVal + " are " + presentSet(resSet)
-        simplifyTree();
+		loader.innerHTML = "Number of flatten end is " + finalNodes.length + "<br>";
+        loader.innerHTML += "Debug tree generated for " + inputVal + "<br>";
+		if(presentSet(resSet) == "[]")
+		{
+			loader.innerHTML += pointVal + " is not a valid point name (Case sensitive or No choice inside)";
+		}
+		else
+		{
+			loader.innerHTML += inputVal + " possible values at " + pointVal + " are " + presentSet(resSet)
+		}
+        simplifyTree(pointVal, expectedVarContent);
         drawResult();
     }
 
@@ -76,10 +91,13 @@
     }
 
     function continueStory() {
+		res = false;
         while (story.canContinue) {
             //Skip texts
             story.Continue();
+			res |= story.currentTags.includes("DBG_SAME_STATE");
         }
+		return res;
     }
 
     function exploreChoice(index, text, flattenParentNode, monitored) {
@@ -89,8 +107,15 @@
         if (story.currentChoices.length >= 1) {
             var savedState = story.state.ToJson();
             var nodeId = story.state.currentChoices[index].targetPath._components[0].name;
+			
             story.ChooseChoiceIndex(index);
-            continueStory();
+            var reboocling = continueStory();
+			if(story.currentTags.includes("DBG_SAME_STATE")
+				|| reboocling)
+			{
+				story.state.LoadJson(savedState);
+				return;
+			}
 
             var flattenNode = new TreeNode(nodeId, flattenParentNode);
             flattenNode.varContent = getVarValue(monitored);
@@ -111,18 +136,24 @@
     }
 
     function getVarValue(name) {
-        if (!isList) {
-            return story.variablesState.$(name);
+		if(story.variablesState.$(name) == undefined)
+		{
+			return undefined;
+		}
+        if (!(story.variablesState.$(name) instanceof  Map)) {
+            return story.variablesState.$(name).toString();
         }
         var mapList = story.variablesState.$(name);
         var result = [];
         mapList.forEach(function(value, key, map) {
-            console.log(key);
             obj = JSON.parse(key);
-            console.log(obj);
             result.push(obj.itemName);
         });
-        return result;
+		if(result.length > 0)
+		{
+			return result.toString();
+		}
+		return "EMPTY";
     }
 
     function isAvoidedChoice(text) {
@@ -150,21 +181,26 @@
         return res;
     }
 
-    function simplifyTree() {
+    function simplifyTree(pointVal, expectedVarContent) {
+		cutFromEndToPoint(pointVal, expectedVarContent);
         if (!fullViewChekcBox.checked) {
-            cutUnchangingBranches(flatten);
+            cutUnchangingBranches(flatten, expectedVarContent);
         }
         for (var i = 0; i < finalNodes.length; i++) {
             shortenSingleBranch(finalNodes[i]);
         }
     }
 
-    function cutUnchangingBranches(node) {
+    function cutUnchangingBranches(node, expectedVarContent) {
+		if(finalNodes.length == 0)
+		{
+			return;
+		}
         if (getNbFinalNodes(node) <= 1) {
             return;
         }
         node.descendents.forEach(function(value, key, map) {
-            cutUnchangingBranches(value);
+            cutUnchangingBranches(value, expectedVarContent);
         });
         var buildingMap = new Map();
         node.descendents.forEach(function(value, key, map) {
@@ -174,6 +210,10 @@
             }
             var finalNode = getFinalNode(value);
             var finalValue = finalNode.varContent;
+			if(expectedVarContent != "" && finalValue != expectedVarContent)
+			{
+				return;
+			}
             if (buildingMap.has(finalValue)) {
                 var current = buildingMap.get(finalValue);
                 buildingMap.set(finalValue, current + ", " + key);
@@ -186,8 +226,7 @@
         });
 
         buildingMap.forEach(function(value, key, map) {
-
-            var endNode = new TreeNode("Merged END", node);
+            var endNode = new TreeNode("MERGED END", node);
             endNode.varContent = key;
             node.descendents.set("[" + value + "]", endNode);
             finalNodes.push(endNode);
@@ -234,6 +273,41 @@
             curr = daddy;
         }
     }
+	
+	function cutFromEndToPoint(pointVal, expectedVarContent)
+	{
+		newFinalNodes = [];
+		for (var i = 0; i < finalNodes.length; i++) {
+            var curr = finalNodes[i];
+			while (curr != null) {
+				if(curr.value == pointVal)
+				{
+					break;
+				}
+				curr = curr.parent;
+			}
+			if(curr != null)
+			{
+				var node;
+				if(pointVal != "END")
+				{
+					node = new TreeNode("FORCED END",curr)
+					node.varContent = curr.varContent;
+					curr.descendents.clear();
+					curr.descendents.set("force ende", node);
+				}
+				else
+				{
+					node = curr;
+				}
+				if(expectedVarContent == "" || node.varContent == expectedVarContent)
+				{
+					newFinalNodes.push(node);
+				}
+			}
+        }
+		finalNodes = newFinalNodes;
+	}
 
     function drawResult() {
         tree_structure = [];
@@ -255,9 +329,15 @@
         };
         tree_structure.push(config);
 
+		var nameText = "START";
+		if(finalNodes.length == 0)
+		{
+			nameText = "NO PATH";
+		}
+
         root = {
             text: {
-                name: "START",
+                name: nameText,
                 desc: "Initial value : " + flatten.varContent
             },
             collapsed: true
@@ -267,7 +347,8 @@
         for (var i = 0; i < finalNodes.length; i++) {
             drawPath(finalNodes[i], tree_structure, root);
         }
-        new Treant(tree_structure);
+		
+		new Treant(tree_structure);
     }
 
     function drawPath(node, array, root) {
@@ -279,6 +360,10 @@
                 child.parent = dnode;
 				addUniqueDnode(child, array);
             }
+			if(dnode.parent != null)
+			{
+				return;
+			}
             curr = curr.parent;
             child = dnode;
             if (curr == null) {
@@ -300,7 +385,7 @@
 
     function getDnode(node) {
         var collapsed = node.descendents.size > 3 || getNbFinalNodeMaxDepth(node) > 5;
-        if (node.value == "END") {
+        if (node.value == "END" || node.value == "FORCED END") {
             dnode = {
                 parent: null,
                 text: {
@@ -396,7 +481,7 @@
         var BreakException = {};
         try {
             node.parent.descendents.forEach(function(value, key, map) {
-                if (value == node) {
+                if (value === node) {
                     res = key;
                     throw BreakException;
                 }

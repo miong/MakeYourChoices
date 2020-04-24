@@ -21,6 +21,7 @@ You take a look at the menu.
     No problem, i bring you that in a minute. #CLASS: others_speak
     -> eating_at_drivers_kitchen
 + [Can i have a bacon burger and some water]
+    #DBG_SAME_STATE
     Can i have a bacon burger and some water. #CLASS: you_speak
     Ok, i bring you that as soon as possible. #CLASS: others_speak
     -> eating_at_drivers_kitchen
