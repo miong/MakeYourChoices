@@ -43,6 +43,7 @@ where ACTIVITY could be :
 DEV : any new engine feature  
 DOC : any documentation updates  
 QA  : any quality fix that is not also a bug  
+CFG : change the tools configuration
 FIX : the commit fix a bug from issues  
 STR : the commit concern only the story.  
 REL : the commit is a release (Preview or Release) (on release branch)
