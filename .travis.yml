@@ -9,9 +9,8 @@ jobs:
   include:
     - stage: compile
       script: 
-        - >
-            sudo apt update
-            sudo apt install mono-complete
-            ./compile.sh
+        - sudo apt update
+        - sudo apt install mono-complete
+        - ./compile.sh
     - stage: deploy
       script: ./auto-deploy.sh
