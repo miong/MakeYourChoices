@@ -1,4 +1,7 @@
+
+[![Build Status](https://travis-ci.com/miong/MakeYourChoices.svg?branch=master)](https://travis-ci.com/miong/MakeYourChoices)
 [![DeepScan grade](https://deepscan.io/api/teams/8790/projects/11002/branches/159303/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=8790&pid=11002&bid=159303)
+[![Release Status](https://travis-ci.com/miong/MakeYourChoices.svg?branch=release)](https://travis-ci.com/miong/MakeYourChoices)
 
 # Make Your Choices
 An horror interactive story.
