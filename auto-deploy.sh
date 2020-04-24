@@ -26,13 +26,13 @@ download_if_not_exist() {
 }
 
 
-project="gmion/make your choices"
+project="gmion/make-your-choices"
 artifact="$1"
-platform="HTML5 / Playable in browser"
+platform="HTML5"
 
 prepare_butler
 
-prepare_and_push $project $artifact $platform
+prepare_and_push "$project" "$artifact" "$platform"
 
 echo "Done."
 exit 0
