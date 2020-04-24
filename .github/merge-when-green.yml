@@ -1,0 +1,4 @@
+requiredChecks:
+  - circleci
+requireApprovalFromRequestedReviewers: true
+mergeMethod: merge
