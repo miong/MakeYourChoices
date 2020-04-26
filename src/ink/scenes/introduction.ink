@@ -13,5 +13,5 @@ It's {print_current_time()}, time to go.
 All your stuff are already loaded into the truck.
 You squeeze your cigarette and jump behind the wheel.
 You didn't know, at this moment, that was the beginning of a whole shit.
-+ Continue
++ [Continue]
     -> road_to_LS_TT
