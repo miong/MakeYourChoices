@@ -1,6 +1,6 @@
 === my_house_TT(to) ===
 #AUDIO: normal_ambiance1
--> save_or_continu("Your house", -> my_house_TT, to)
+-> save_or_continu_with_arg ("Your house", -> my_house_TT, to)
 
 === receive_keys ===
 You're driving back to the residencial part of the city.\
@@ -27,6 +27,8 @@ He takes you in his arms.
 "Yes I will !" #CLASS: steve_speak
 Steve get in his car. You see him leaving while waving at you. You're alone now.
 "It's time to settle down !" you sigh.  #CLASS: you_speak
++ [Continue]
+-
 The house is clean. Furniture is included in the rental.
 It took you one hour to unload and install all your stuff.
 ~ V_CURRENT_TIME += 1.0
@@ -46,7 +48,7 @@ She is smilling at you and gives you the pie.
 {affect_affinity(YOU,RACHELLE,C_STAT_MEDIUM_UP)}
 {affect_affinity(RACHELLE,YOU,C_STAT_LIL_UP)}
 + [Stay silent]
-  You're staying silent for a few seconds.
+  You're staying silent for a few seconds. #CLASS: choice_made
     "I think you're tired with the road and all the work you've done." #CLASS: rachelle_speak
     "I'll let you rest. If you need anything, do not hesitate." #CLASS: rachelle_speak
 + [Talk with Rachelle]
@@ -54,6 +56,7 @@ She is smilling at you and gives you the pie.
     {affect_affinity(YOU,RACHELLE,C_STAT_LIL_UP)}
     {affect_affinity(RACHELLE,YOU,C_STAT_MEDIUM_UP)}
     ~ V_KNOW_FOR_THE_CELLAR = true
+    You're in the mood to talk.#CLASS: choice_made
     "I'll eat it tonight." #CLASS: you_speak
     "I hope it will help to recover from the work done." #CLASS: rachelle_speak
     "At least it'll help and make a good diner." #CLASS: you_speak
@@ -207,5 +210,53 @@ You go back to bed.
 You're sure that you saw a silhouette.
 But there is nothing.
 You decide to sleep.
-Maybe things will get clearer tomorrow.
+Maybe thing will get clearer tomorrow.
+Afer a few minutes, you fall asleep.
+-> my_house_TT(-> morning_day2)
+
+=== morning_day2 ===
+{next_day()}
+~ V_CURRENT_TIME = 8.0
+{V_CURRENT_DAY} #CLASS: day
+You wake up at {print_current_time()}. \
+Everything about last nigth is confused in you mind. \
+It feel like you had a nightmare. \
+After you took a shower, you decide to do a jogging to change you mind.
+Before leaving the house, you take a breakfast. \
+A few eggs and sausage. \
+A large glass of orange juice.
+You feel like refilling.
+You put on your sportswear and running shoes.
+While opening the door, you see clear weather. \
+You start enjoying your day.
+~ V_CURRENT_TIME = 9.0
++ [Continue]
+    -> jogging_TT
+    
+=== back_from_jogging ===
+You open the door and go ahead to the bathroom. \
+A warm shower to eliminate all the sweat. \
+You put your clothes in the washing machine and start it. \
+you go back in the living room end start the TV.
+There is nothing really interesting.
+{ 
+    - V_HAVE_THE_HAMMER:
+        You remember that you've got to repare the cave's latch.
+        ~ V_LOCKET_FIXED = true
+        You're going to the cave.
+        The place is a bit creepy. \
+        You open the door to the back yard to let some light in.
+        The latch is really bended. \
+        With the new hammer, you straighten it. \
+        But it seems to be brittle. \
+        You try to harden it with some wire and nails.
+        Now you feel safe with this latch repaired.
+        You go back in the living room.
+        You start to feel hungry.
+    - else:
+        So you start zapping until you're hungry.
+}
++ [Continue]
+-
+# TODO : RECEIVE STEVE FOR EAT
 -> MYC_WIP
