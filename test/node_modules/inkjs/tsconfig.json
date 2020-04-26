@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"outDir": "./engine",
+		"rootDir": "./src",
+		"strict": true,
+		"sourceMap": true,
+		"declaration": true
+	},
+
+	"include": ["src/"],
+	"exclude": ["node_modules", "**/__tests__/*"]
+}
