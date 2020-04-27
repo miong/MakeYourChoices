@@ -44,6 +44,7 @@ You park the truck. It's {print_current_time()}.
     -> WYD_After_first_visite (x , false)
 + [Go to you're new house {V_IS_HUNGRY : without eating}]
     {V_IS_HUNGRY : You have losen your appetite. }You go back to the car and head to your new house tiredly. #CLASS : choice_made
+    ~ V_IS_HUNGRY=0
     ~ V_STAT_FORCE_YOU -= 10
     ~ V_STAT_SPEED_YOU -= 10
     While driving, you text Steve to tell him you arrive home in 15 minute.

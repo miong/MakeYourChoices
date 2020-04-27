@@ -168,12 +168,14 @@ One of them searches in the garden and the other comes to you.
 + [It was too dark]
     "No sorry, it was too dark to see him." #CLASS: choice_made
 + [I think it was a man]
+    #DBG_SAME_STATE
     "I think it was a man but i'm not sure." #CLASS: choice_made
 -
 "Did he say anything ?" #CLASS: others_speak
 + [I haven't heard anything]
     "I haven't heard anything." #CLASS: choice_made
 + [He said nothing]
+    #DBG_SAME_STATE
     "He said nothing. He was just standing there." #CLASS: choice_made
 -
 "So, if I understand, there was a man in your garden just standing there." #CLASS: others_speak

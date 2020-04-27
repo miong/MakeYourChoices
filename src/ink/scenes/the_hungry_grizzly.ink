@@ -169,6 +169,7 @@ She winks at you and then smiles.
 -> leaving_to_your_house
 
 === leaving_to_your_house ===
+~V_IS_HUNGRY=0
 You stand up.
 "You gotta leave {get_affinity(VANESSA,YOU) >= 65 : already }?" #CLASS: vanessa_speak
 "Yeah, i got to receive the keys of my new house." #CLASS: you_speak

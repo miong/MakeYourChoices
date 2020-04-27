@@ -33,6 +33,7 @@ There is also a fast food named "The driver's kitchen" on the next rest area tha
 
 === choose_where_to_eat(x) ===
 + {x} [Search "The driver's kitchen" on your smartphone]
+    #DBG_SAME_STATE
     You decide to search the restaurant on your smartphone #CLASS : choice_made
     The driver's kitchen is a 3 starts rated fast food, serving burgers.
     -> choose_where_to_eat(false)
