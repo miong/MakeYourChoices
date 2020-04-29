@@ -20,8 +20,6 @@ pull_request_rules:
           - law0
           - miong
           - thomasnohaic
-      comment:
-        message: Add reviewers ( ˘ ³˘)♥.
   - name: Set DOC on creation
     conditions:
       - base=master
@@ -29,8 +27,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["documentation"]
-      comment:
-        message: Add status from pull request title.
   - name: Set DEV on creation
     conditions:
       - base=master
@@ -38,8 +34,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["enhancement"]
-      comment:
-        message: Add status from pull request title.
   - name: Set QA on creation
     conditions:
       - base=master
@@ -47,8 +41,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["Quality"]
-      comment:
-        message: Add status from pull request title.
   - name: Set STR on creation
     conditions:
       - base=master
@@ -56,8 +48,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["Story"]
-      comment:
-        message: Add status from pull request title.
   - name: Set FIX on creation
     conditions:
       - base=master
@@ -65,8 +55,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["bug"]
-      comment:
-        message: Add status from pull request title.
   - name: Set md on creation
     conditions:
       - base=master
@@ -74,8 +62,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["md"]
-      comment:
-        message: Add status from modified files types.
   - name: Set ink on creation
     conditions:
       - base=master
@@ -83,8 +69,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["ink"]
-      comment:
-        message: Add status from modified files types.
   - name: Set js on creation
     conditions:
       - base=master
@@ -92,8 +76,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["js"]
-      comment:
-        message: Add status from modified files types.
   - name: Set config on creation
     conditions:
       - base=master
@@ -101,8 +83,6 @@ pull_request_rules:
     actions:
       label: 
         add: ["config"]
-      comment:
-        message: Add status from modified files types.
   - name: Automatic merge
     conditions:
       - "#approved-reviews-by>=1"
