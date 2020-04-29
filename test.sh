@@ -4,4 +4,5 @@ cp "build/make your choirces.js" build/story_module.js
 echo ";" >> build/story_module.js
 echo "module.exports.storyContent = storyContent;" >> build/story_module.js
 cd  ./test
+npm install inkjs assert
 node main.js
