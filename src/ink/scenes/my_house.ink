@@ -254,9 +254,99 @@ There is nothing really interesting.
         You go back in the living room.
         You start to feel hungry.
     - else:
-        So you start zapping until you're hungry.
+        You start zapping until you're hungry.
 }
 + [Continue]
 -
-# TODO : RECEIVE STEVE FOR EAT
+-> eat_with_steve
+
+=== eat_with_steve ===
+~ V_CURRENT_TIME = 11.91
+It's {print_current_time()}. \
+You text Steve to knwo if he is still comming.
+[You] Hey buddy! I start to feel really hungry. Are you on your way ? #CLASS: you_speak
+[Steve] Hey bro! I'll be there in 5 minutes. #CLASS: steve_speak
+[Steve] I hope the beers are fresh. #CLASS: steve_speak
+[You] Yeah ! I'm waiting for you. #CLASS: you_speak
+Steve arrives at you door. \
+You let him in and both of you go in the kitchen. \
+Steve put a bag on the table. \
+He opens it, and he gets meat out of it.
+I'll take the portable barbecue in my car trunk. #CLASS: steve_speak
+A Few minutes later, both of you are grilling the meat in the backyard.
+The conversations are full of school memories and jokes. \
+The time goes and after a good lunch, both of you enjoy the good weather.
+Afte a silence, you talk about what happened last night.
+{
+    - V_CALLED_THE_COPS:
+        You called the cops. That was the right thing to do. #CLASS: steve_speak
+    - else:
+        You should have called the cops. That was the right thing to do. #CLASS: steve_speak
+}
+Yeah. I know. #CLASS: you_speak
+And don't worry about it. We are in Lake Side. This city is too calm for this kind of shit. #CLASS: steve_speak
+What do you mean ? #CLASS: you_speak
+Hum. In more then 10 year that I have been here, only one burglary have been signaled. #CLASS: steve_speak
+Rachelle, the neighbor, told me. #CLASS: you_speak
+Oh, you already know Rachelle ? #CLASS: steve_speak
+I met her yesterday, yes. #CLASS: you_speak
+The conversation continue about you and the way that you easily meet people. \
+It have always be the same. \
+People comes to you and becomes your friends.
+~ V_CURRENT_TIME = 15.00
+Near {print_current_time()}, Steve leaves. \
+You start cleanning the dishes. \
+Then you put the clothes to dry. \
+And finally, you vacuum the living room.
++ [Continue]
+-
+-> second_night
+
+=== second_night ===
+~ V_CURRENT_TIME = 22.00
+At {print_current_time()}, you're in front of the TV. \
+You remember that tomorrow, you'll start your new job.
++ [Go to sleep]
+    You feel tired. #CLASS: choice_made
+    You prepare everything for your first day at telecom 2000. \
+    Then you go to sleep.
+    ~ kill(RACHELLE)
+    #GO TO DAY 3.
+    -> MYC_WIP 
++ [Keep watching TV]
+    You're not tired yet. #CLASS: choice_made
+    And one hour later, you're still watching TV. \
+    "That's not responsible" you're thinking. # you_speak
+    You stand up and turn off the TV and the living room ligths. \
+    You start walking in the stairs, heading to the bed room.
+    I need to be ready for tomorrow. I got to make a good impression. # you_speak
+    ++ You hear some noise in the garden
+    --
+    -> terror_in_the_backyard
+    
+=== terror_in_the_backyard ===
+#AUDIO: horror_ambiance1
+You turn back. \
+You go into the kitchen. \
+Once there, you see that a man had jumped the fence again.
+He looks at your bedroom window. \
+This time, there is no lights on. \
+You see him comming closer to the house's door. \
+But half-way, he stops.
+"He is Looking at Rachelle's house" you say in your mind. #CLASS: you_speak
+The man starts his way to the fence between the two houses.
+I think he haven't noticed me. #CLASS: you_speak
+{
+    - V_CALLED_THE_COPS:
+        Last time I called the cops, and they have done nothing.
+}
+This time, you decide you'll not let this guy fly away.
++ [Turn the lights on]
+    ~ V_LIGHTS_ON = true
+    You turn the lights on #CLASS: choice_made
++ [Keep the lights off]
+    ~ V_LIGHTS_ON = false
+    You keep the lights off #CLASS: choice_made
+-
+You open the door and stand up in the garden.
 -> MYC_WIP
