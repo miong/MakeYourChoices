@@ -1,6 +1,6 @@
 === road_to_LS_TT ===
 #AUDIO: normal_ambiance2
--> save_or_continu("Road to Lake side", -> road_to_LS_TT, -> driving_to_LS_part_one)
+-> save_or_continu("Road to Lake Side", -> road_to_LS_TT, -> driving_to_LS_part_one)
 
 === driving_to_LS_part_one ===
 Leaving the neighbourhood, you remember all the bad things that happened to you in the last few months.\
@@ -35,7 +35,7 @@ There is also a fast food named "The driver's kitchen" on the next rest area tha
 + {x} [Search "The driver's kitchen" on your smartphone]
     #DBG_SAME_STATE
     You decide to search the restaurant on your smartphone #CLASS : choice_made
-    The driver's kitchen is a 3 starts rated fast food, serving burgers.
+    The driver's kitchen is a 3 stars rated fast food, serving burgers.
     -> choose_where_to_eat(false)
 + [Go to The driver's kitchen]
     You're too hungry to wait. #CLASS : choice_made
@@ -45,7 +45,7 @@ There is also a fast food named "The driver's kitchen" on the next rest area tha
     -> stay_on_the_road
 
 === the_drivers_kitchen ===
-The next 10 minutes, you're driving thinking of what you'll eat.
+For the next 10 minutes, you're driving thinking of what you'll eat.
 + [Continue]
     -> drivers_kitchen_TT
 
