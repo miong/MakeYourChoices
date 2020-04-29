@@ -5,5 +5,6 @@ cd  "%~dp0"
 echo ; >> "build\story_module.js"
 echo module.exports.storyContent = storyContent; >> "build\story_module.js"
 cd  "%~dp0\test"
+call npm install inkjs assert
 node main.js
 pause
