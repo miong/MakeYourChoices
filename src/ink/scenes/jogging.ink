@@ -13,33 +13,32 @@ The lottisage form a cicle.
     You goes left. #CLASS: choice_made
 -
 You start jogging.
-This activity make you realize that you haven't really visited the neighbourhood. \
-So while running, you look at the houses. \
-You're seeing plenty of great ones. \
-The garden are often well maintained. \
+It make you realize that you haven't really visited the neighbourhood. \
+While running, you look at the houses and you see plenty of great ones. \
+The gardens are often well maintained. \
 A few ones have hedges as barrier. \
-Some even have gaden decorations.
+Some even have garden decorations.
 The road are empty at this hour.\
 No cars so no exhaust gas. \
 "That's better then my last location" you're thinking. #CLASS: you_speak
 But there is also nobody. \
 It create a feeling of absolute calm. \
-No noise to disturb you.
+No noise to disturb you, though it's kinda creepy.
 Until you hear an entrance opening.
 You look on your left and you see an other jogger preparing himself. \
 You wave at him and he smile at you.
 A few seconds later, you're both running together.
 "Hey, what's up ? You're new here for sure. I'm Mike." #CLASS: mike_speak
-"Hello, yeah i'm new here. I'm David."#CLASS : you_speak
-"That was an evidence. I'm the only one doing jogging the {V_CURRENT_DAY} morning here." #CLASS: mike_speak
-"I saw there was no ones in the street effectively." #CLASS: you_speak
+"Hi, yeah I'm new here. I'm David."#CLASS : you_speak
+"That was kinda obvious. I'm usually the only one jogging the {V_CURRENT_DAY} morning here." #CLASS: mike_speak
+"I saw there was no one in the streets, indeed." #CLASS: you_speak
 Then a few minutes goes without a word spoken. \
 It took you 20 minutes to run through the lotissage. \
 You decide to continue running for another round.
 When you arrive in front of Mike house, he start a new discussion.
 "You're in good shape. Are you sporty ?" #CLASS: mike_speak
 "I was. I've been a football player for 4 years." #CLASS: you_speak
-"But I arrested since last year. Now I only do some jogging." #CLASS: you_speak
+"But I stopped since last year. Now I only do some jogging." #CLASS: you_speak
 "Nice. I was linebacker when I was in college. You ?" #CLASS: mike_speak
 "Receiver" #CLASS: you_speak
 {affect_affinity(MIKE,YOU,C_STAT_LIL_UP)}
@@ -62,8 +61,8 @@ When you arrive in font of my house he stop.
 "Yes. It was cool." #CLASS: you_speak
 "See you next {V_CURRENT_DAY} dude" #CLASS: mike_speak
 "I'll be there." #CLASS: you_speak
-And he leaves you end alone.
-The last few miles where the difficult ones as always. \
+And he leaves you alone.
+The last few miles were the difficult ones as always. \
 But you're now in front of your house.
 ~ V_CURRENT_TIME += 1.0
 + [Continue]
