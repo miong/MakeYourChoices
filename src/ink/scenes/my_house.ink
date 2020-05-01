@@ -67,7 +67,7 @@ She is smilling at you and gives you the pie.
     Both of you are laughing.
     "Alright then, Welcome to Lake side !"  #CLASS: rachelle_speak
 -
-"Thank youi, Rachelle. I'll tell you how tasty was the pie next time we meet." #CLASS: you_speak
+"Thank you, Rachelle. I'll tell you how tasty was the pie next time we meet." #CLASS: you_speak
 "I'm waiting for your reviews, David." #CLASS: rachelle_speak
 She's going back to her house.\
 You see she's your left neighbor.
