@@ -136,7 +136,7 @@ You wave at her and she comes.
 "The pleasure is mine. I'll ask the kitchen for your burger." #CLASS: vanessa_speak
 And she vanishes behind the bar.
 The guys at the bar stand up.
-"Vanessa, we're leaving. Thanks for the meali, sweetheart." #CLASS: others_speak
+"Vanessa, we're leaving. Thanks for the meal, sweetheart." #CLASS: others_speak
 "See you soon Marc." #CLASS: vanessa_speak
 As the guys are leaving the room, you see Vanessa coming back with your plate.\
 She disposes it on the table.\
