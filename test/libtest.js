@@ -159,6 +159,34 @@ module.exports = {
 			console.log("");
 			console.log("");
 		}
-		assertStrict.ok(failedModules.length == 0, failedModules.length+" scenario(s) failed");
+		if(failedModules.length == 0)
+		{
+			process.exit(0);
+		}
+		console.log(failedModules.length+" scenario(s) failed");
+		process.exit(1);
+	},
+	
+	verify_requirements : function()
+	{
+		var semver = require("semver");
+
+		const min_node_version = ">=10.19.0";
+		const min_npm_version = ">=6.14.4";
+		
+		var child_process = require('child_process');
+		
+		if (!semver.satisfies(process.version, min_node_version)) {
+			console.log(`Required node version ${min_node_version} not satisfied with current version ${process.version}.`);
+			process.exit(1);
+		}
+		console.log("Node version is OK : "+process.version);
+
+		var npmVersion = "v"+child_process.execSync('npm --version');
+		if (!semver.satisfies(npmVersion, min_npm_version)) {
+			console.log(`Required npm version ${min_npm_version} not satisfied with current version ${npmVersion}.`);
+			process.exit(1);
+		}
+		console.log("Npm version is OK : "+npmVersion);
 	}
 };
