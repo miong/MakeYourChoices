@@ -12,7 +12,7 @@ Two minutes later, Steve arrives with the real estate agent.
 "Thanks Steve. Bro, that's good to see you again." #CLASS: you_speak
 You hold Steve in your arms.
 "Do you want to visit ?" #CLASS: others_speak
-"No, the online visit was enought, thanks" #CLASS: you_speak
+"No, the online visit was enougth, thanks" #CLASS: you_speak
 "I just want to unload the truck to make the house mine." #CLASS: you_speak
 "No problem, then here are the keys." #CLASS: others_speak
 The agent gives you the keys.
@@ -32,7 +32,7 @@ It took you one hour to unload and install all your stuff.
 ~ V_CURRENT_TIME += 1.0
 Now you feel home. You enjoy the ambient calm.
 Your tools are the last things you need to unload.\
-You rented the truck for two days, so you device to return the\
+You rented the truck for two days, so you decide to return the\
 truck tomorrow, and take a break.\
 You start to watch the TV, comfy in the couch.
 While you're watching a replay of a good football game, you hear the doorbell.
@@ -58,16 +58,16 @@ She is smilling at you and gives you the pie.
     "I hope it will help to recover from the work done." #CLASS: rachelle_speak
     "At least it'll help and make a good diner." #CLASS: you_speak
     You're smilling.
-    "Oh. before i leave, the last occupant of this house have been burglarized." #CLASS: rachelle_speak
+    "Oh. Before i leave, the last occupant of this house have been burglarized." #CLASS: rachelle_speak
     "Really ?" #CLASS: you_speak
     "Yeah. If I remember well they entered by the cellar." #CLASS: rachelle_speak
     "And I think that Henry hasn't done any repair work." #CLASS: rachelle_speak
     "Thank you for the information. I'll check the cellar to see what need to be fixed." #CLASS: you_speak
-    "No problem. That the good part of having a curious neighbor." #CLASS: rachelle_speak
+    "No problem. That's the good part of having a curious neighbor." #CLASS: rachelle_speak
     Both of you are laughing.
-    "Then welcome to Lake side."  #CLASS: rachelle_speak
+    "Alright then, Welcome to Lake side !"  #CLASS: rachelle_speak
 -
-"Thank you Rachelle. I'll tell you how tasty was the pie next time we meet." #CLASS: you_speak
+"Thank youi, Rachelle. I'll tell you how tasty was the pie next time we meet." #CLASS: you_speak
 "I'm waiting for your reviews, David." #CLASS: rachelle_speak
 She's going back to her house.\
 You see she's your left neighbor.
@@ -106,14 +106,14 @@ You come back to the living room.
 You spend the rest of the day watching TV.
 ~ V_CURRENT_TIME = 23.0
 It's now {print_current_time()}.
-You're up stairs, in your bed room.
-Before you go to bed, you're thinking of your fisrt day in Lake side by the window.
+You're upstairs, in your bed room.
+Before you go to bed, you're thinking of your first day in Lake side by the window.
 The window overlooks the back yard.
 You're thinking about the people you met, about the job you'll start.
 + [At this moment...]
     #AUDIO: horror_ambiance1
     At this moment, a strange mouvement catches your eyes.\
-    And there, near to a tree and the fence, you see a silhouette.\
+    And there, near a tree and the fence, you see a silhouette.\
     It seems to be a man standing there.\
     Unfortunatly, the light was so dim as the\
     night was falling that you couldn't see his face.
@@ -195,7 +195,7 @@ His coworker says no with his head.
 "The report will say that a lapper was seen in the neighbourhood." #CLASS: others_speak
 "We will increase the number of patrols. Don't worry." #CLASS: others_speak
 "If there is someone, we will catch him." #CLASS: others_speak
-"All rigth. Thank you officer." #CLASS: you_speak
+"Alright. Thank you officer." #CLASS: you_speak
 You see the cops leaving to their car.
 -> rest_of_the_nigth
 
@@ -203,9 +203,9 @@ You see the cops leaving to their car.
 #AUDIO: normal_ambiance1
 You're confused.
 The day was long enough.
-You go back to your bed.
+You go back to bed.
 You're sure that you saw a silhouette.
 But there is nothing.
 You decide to sleep.
-Maybe thing will get clearer tomorrow.
+Maybe things will get clearer tomorrow.
 -> MYC_WIP

@@ -6,9 +6,9 @@
 You arrive to Lake Side.\
 It's a small town, with something like 100 inhabitants.
 You pass the entrance of the city.
-Driving on main road, you see several small houses wich form a allotment in a very rural landscape.\
+Driving on main road, you see several small houses which form an allotment in a very rural landscape.\
 When you enter in the heart of the city, you notice the town hall, and next to it the police station, a small clinic and a small car workshop.\
-A little further, appears "Lake stuff", the town shopping center.\
+A bit further, appears "Lake stuff", the town shopping center.\
 You can see that if you continue on this road, you'll enter the industrial zone where Steve's compagny stands.
 {V_IS_HUNGRY: And there it is|You also see}, just before the industries, the town diner named The hungry grizzly.
 You park the truck. It's {print_current_time()}.
@@ -33,7 +33,7 @@ You park the truck. It's {print_current_time()}.
     You're walking through the industrial zone and notice about 10 compagnies here.\
     Mainly transport compagnies, but also a fish shop and down the alley, telecom 2000.\
     That's Steve's compagny, your new workplace.
-    And obviously it's closed.
+    And, unsurprisingly, it's closed.
     The building seems brand new compared to the others.
     You stare at the building a few minutes.
     There is no workshop, no cafeteria and no work council.\
