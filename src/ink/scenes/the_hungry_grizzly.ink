@@ -23,26 +23,26 @@ You come closer without taking your eyes of her.
 "Effectively, the service is ended. But it's seems that you've done a lot of road. #CLASS: vanessa_speak
 You're not from here, mister... ?" #CLASS: vanessa_speak
 "David. My name is David. And yes I'm new here. In fact, you're the first person I meet from Lake side." #CLASS: you_speak
-She looks at you intensivly for a few seconds then she says :
+She looks at you intensively for a few seconds then she says :
 "Then welcome to Lake side David. I'm Vanessa." #CLASS: vanessa_speak
 She takes a look inside.
-"I will not let you hungry for you arrival. You'll need to gain strength and to relax a bit." #CLASS: vanessa_speak
+"I will not leave you hungry on you arrival. You need to relax for a bit, rest and recover" #CLASS: vanessa_speak
 You feel a bit embarrassed annoying the waitress after her service.
 "No, i'll find somewhere else to eat..." #CLASS: you_speak
-"A {V_CURRENT_DAY}, at {print_current_time()}. Everything is closed, David." #CLASS: vanessa_speak
+She laugh, "A {V_CURRENT_DAY}, at {print_current_time()}, everything is closed here" #CLASS: vanessa_speak
 "Come on, please enter while i'll make you a sandwich" she said with a little wink. #CLASS: vanessa_speak
 You enter the diner.\
 She shows you the bar where you have a seat.\
 She goes into the kitchen and comes back with some bread, ham and cheese.
-"So what bring you to Lake side David ?" she says while making the sandwich.#CLASS: vanessa_speak
-"Taking control of my life. Starting a new job."  #CLASS: you_speak
-"Oh. And where do you work ?" #CLASS: vanessa_speak
-"At telecom 2000. But i've not started yet." #CLASS: you_speak
-"That's Steve's compagny. You'll be well there" #CLASS: vanessa_speak
+"So, what bring you to Lake side David ?" she says while making the sandwich.#CLASS: vanessa_speak
+"Taking back control of my life. Starting a new job."  #CLASS: you_speak
+"Oh ! And where do you work ?" #CLASS: vanessa_speak
+"At telecom 2000. But, I've not started yet." #CLASS: you_speak
+"Oh, that's Steve's compagny. You'll be well there" #CLASS: vanessa_speak
 "You know Steve ?" #CLASS: you_speak
 "Hell yeah ! He's one of my loyal customers and one of my best friends." #CLASS: vanessa_speak
 "What about you ? How do you know him ?" #CLASS: vanessa_speak
-"He was my buddy when we was in engineering school." #CLASS: you_speak
+"He was my buddy when we were in engineering school." #CLASS: you_speak
 "What a coincidence ! Then we share a good friend." #CLASS: vanessa_speak
 She gives you the sandwich that looks yummy.
 + [Stay to eat the sandwich and talk with Vanessa]
@@ -53,7 +53,8 @@ She gives you the sandwich that looks yummy.
     "Can you tell me more about Lake side ?" #CLASS: you_speak
     "It's a small, calm and humble city. Everyone knows each other here." #CLASS: vanessa_speak
     "Seems a good place to live as you describe it." #CLASS: you_speak
-    "Yes, but there isn't a lot of work available here unfortunately." #CLASS: vanessa_speak
+    "Yes, though it's bit too calm at times, if you know what I mean. \
+    And there isn't a lot of work available here unfortunately." #CLASS: vanessa_speak
     "But you already got one so that not a problem." #CLASS: vanessa_speak
     "Yes, I'll see about it with Steve later." #CLASS: you_speak
     Staring at her, you see that she is looking at you the same way you're looking at her.
@@ -119,7 +120,7 @@ You see this beautiful women comming to you.
 She accompanies you to a seat and gives you the menu.
 "I let you choose your meal. Let me know when you're ready." #CLASS: vanessa_speak
 You're looking at her. She's going to the bar and talk with the other customers.
-"Damn, she's sweet as honey" you're thinking.
+"Damn, she's as sweet as honey" you're thinking.
 You look at the menu, but she's still on your mind.\
 You wave at her and she comes.
 "You have choosen, mister ?" #CLASS: vanessa_speak
@@ -127,7 +128,7 @@ You wave at her and she comes.
 "Oh, I'm sorry but there is no cheese burger left." she said smilling. #CLASS: vanessa_speak
 "Too bad, then I'll..." #CLASS: you_speak
 "No, I was joking. The cheese burger is our speciality." #CLASS: vanessa_speak
-"Hum... ok... Then i'll try it." #CLASS: you_speak
+"Hum... ok... Then I'll try it." #CLASS: you_speak
 "You're not from Lake side ?" #CLASS: vanessa_speak
 "Effectively, I'm new here." #CLASS: you_speak
 "My name is Vanessa." #CLASS: vanessa_speak
@@ -135,7 +136,7 @@ You wave at her and she comes.
 "The pleasure is mine. I'll ask the kitchen for your burger." #CLASS: vanessa_speak
 And she vanishes behind the bar.
 The guys at the bar stand up.
-"Vanessa, we're leaving. Thanks for the meal sweet heart." #CLASS: others_speak
+"Vanessa, we're leaving. Thanks for the meali, sweetheart." #CLASS: others_speak
 "See you soon Marc." #CLASS: vanessa_speak
 As the guys are leaving the room, you see Vanessa coming back with your plate.\
 She disposes it on the table.\
@@ -172,8 +173,8 @@ She winks at you and then smiles.
 ~V_IS_HUNGRY=0
 You stand up.
 "You gotta leave {get_affinity(VANESSA,YOU) >= 65 : already }?" #CLASS: vanessa_speak
-"Yeah, i got to receive the keys of my new house." #CLASS: you_speak
-"Then, maybe i'll see you again with Steve." #CLASS: vanessa_speak
+"Yeah, I got to receive the keys of my new house." #CLASS: you_speak
+"Then, maybe I'll see you again with Steve." #CLASS: vanessa_speak
 "I hope so" you said smilling. #CLASS: you_speak
 You leave the hungry grizzly, jump in the car and head for your house.\
 While driving, you text Steve to tell him you arrive home in 15 minutes.
