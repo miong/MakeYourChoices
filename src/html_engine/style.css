@@ -193,7 +193,7 @@ p.choice a {
 }
 
 .mike_speak {
-	color: #1739d1;
+	color: #0575ff;
 }
 
 .steve_speak {
@@ -206,6 +206,10 @@ p.choice a {
 
 .vanessa_speak {
 	color: #ab3e91;
+}
+
+.faceless_speak {
+	color: #fc2c03;
 }
 
 .others_speak {
