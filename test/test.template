@@ -1,0 +1,15 @@
+var libtest = require("./libtest");
+module.exports.testRunnable = () => {
+
+libtest.declare_module("MODULE_NAME");
+
+libtest.declare_test("MODULE_NAME", "TEST_NAME", function ()
+{
+	// see https://nodejs.org/api/assert.html for all assertion
+	libtest.assert().ok(true, "On assertion fail message");
+	libtest.assert().throws(() => {CALL_YOUR_FUNCTION_WITH_ARGS}, "On assertion fail message");
+	
+});
+
+
+}
