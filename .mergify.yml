@@ -1,0 +1,121 @@
+pull_request_rules:
+  - name: Set MWG on creation
+    conditions:
+      - base=master
+      - -label~=^.*
+    actions:
+      label: 
+        add: ["merge-when-green"]
+      comment:
+        message: |
+          Automatically set to merge when green ( ˘ ³˘)♥.
+          Add WIP status to avoid automated merge if necessary.
+  - name: Add reviewers 
+    conditions:
+      - base=master
+      - "#review-requested<1"
+    actions:
+      request_reviews:
+        users:
+          - law0
+          - miong
+          - thomasnohaic
+  - name: Set DOC on creation
+    conditions:
+      - base=master
+      - title~=^\[DOC\].*
+    actions:
+      label: 
+        add: ["documentation"]
+  - name: Set DEV on creation
+    conditions:
+      - base=master
+      - title~=^\[DEV\].*
+    actions:
+      label: 
+        add: ["enhancement"]
+  - name: Set QA on creation
+    conditions:
+      - base=master
+      - title~=^\[QA\].*
+    actions:
+      label: 
+        add: ["Quality"]
+  - name: Set STR on creation
+    conditions:
+      - base=master
+      - title~=^\[STR\].*
+    actions:
+      label: 
+        add: ["Story"]
+  - name: Set FIX on creation
+    conditions:
+      - base=master
+      - title~=^\[FIX\].*
+    actions:
+      label: 
+        add: ["bug"]
+  - name: Set md on creation
+    conditions:
+      - base=master
+      - files~=^.*\.md
+    actions:
+      label: 
+        add: ["md"]
+  - name: Set ink on creation
+    conditions:
+      - base=master
+      - files~=^.*\.ink
+    actions:
+      label: 
+        add: ["ink"]
+  - name: Set js on creation
+    conditions:
+      - base=master
+      - files~=^.*\.js
+    actions:
+      label: 
+        add: ["js"]
+  - name: Set config on creation
+    conditions:
+      - base=master
+      - files~=^.*\.yml
+    actions:
+      label: 
+        add: ["config"]
+  - name: Automatic merge
+    conditions:
+      - "#approved-reviews-by>=1"
+      - "#changes-requested-reviews-by=0"
+      - status-success=Travis CI - Pull Request
+      - label!=WIP
+      - label=merge-when-green
+      - base=master
+    actions:
+      merge:
+        method: squash
+      comment:
+        message: Merged automatically ( ˘ ³˘)♥.
+  - name: Remove outdated reviews
+    conditions:
+      - base=master
+    actions:
+      dismiss_reviews: {}
+      comment:
+        message: |
+          New pull request implies new reviews ¯\\_(ツ)_/¯.
+  - name: Delete head branch after merge
+    conditions:
+      - base=master
+      - merged
+    actions:
+      delete_head_branch: {}
+      comment:
+        message: Branch delete because merged (◠﹏◠).
+  - name: ask to resolve conflict
+    conditions:
+      - conflict
+    actions:
+      comment:
+        message: This pull request is now in conflicts. Could you fix it? (｡◕‿◕｡)
+ 

@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>story states debugger</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="treant-js-master/Treant.css" type="text/css"/>
+	<style>
+		.hide {
+			opacity: 0;
+		}
+		.node p { font-size: 15px; line-height: 20px; height: 20px; font-weight: bold; padding: 3px; margin: 0; }
+		.Treant .collapse-switch { width: 100%; height: 100%; border: none; }
+		.Treant .node.collapsed { background-color: #D7F5FF; color: #827A7A; }
+		.Treant .node.collapsed .collapse-switch { background: none; }
+	</style>
+
+</head>
+
+<body class="dark">
+	<h1 class="story_title_transition" >story state debugger</h1>
+    <div class="outerContainer">
+		<table id="varTable">
+			<thead>
+				<tr>
+					<th colspan="2">Monitored Variable</th>
+				</tr>
+			</thead>
+				<tr>
+					<td>Name</td>
+					<td><input id="varName"></td>
+				</tr>
+				<tr>
+					<td>Detail point</td>
+					<td><input id="pointName"></td>
+				</tr>
+				<tr>
+					<td>Expected Value</td>
+					<td><input id="ValueInput"></td>
+				</tr>
+		</table>
+		<div>
+			<button id="StartAnalysis">Start Analysis</button>
+			<input type="checkbox" id="fullView">
+			Full view
+		<div>
+		<div id="loader" class="hide">Debug tree generated</div>
+		<div class="chart" id="flattenTree"></div>
+    </div>
+	<script src="treant-js-master/vendor/raphael.js"></script>
+    <script src="treant-js-master/Treant.js"></script>
+    <script src="../../build/ink.js"></script>
+    <script src="../../build/make your choirces.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

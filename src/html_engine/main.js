@@ -270,7 +270,7 @@
     function saveState() {
         var savedState = story.state.ToJson();
         var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(savedState));
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(encrypt(savedState)));
         element.setAttribute('download', "make_your_choices.save");
         element.style.display = 'none';
         document.body.appendChild(element);
@@ -289,20 +289,79 @@
             reader.readAsText(file, 'UTF-8');
             // here we tell the reader what to do when it's done reading...
             reader.onload = readerEvent => {
-                var savedState = readerEvent.target.result; // this is the content!
-                try {
-                    story.state.LoadJson(savedState);
-                    removeAll("p");
-                    removeAll("img");
-                    setVisible(".header", false);
-                    continueStory(true);
-                } catch (error) {
-                    console.log(error);
-                }
+				var savedState = readerEvent.target.result; // this is the content!
+				decrypt(savedState).then( (state) => {
+					try {
+						// SAVE SUCCES
+						var V_SUCCESS_YOU_SURVIVED = story.variablesState.V_SUCCESS_YOU_SURVIVED;
+						var V_SUCCESS_ALL_SURVIVED = story.variablesState.V_SUCCESS_ALL_SURVIVED;
+						var V_SUCCESS_YOU_DIED = story.variablesState.V_SUCCESS_YOU_DIED;
+						var V_SUCCESS_ALL_DIED = story.variablesState.V_SUCCESS_ALL_DIED;
+						var V_SUCCESS_MADNESS = story.variablesState.V_SUCCESS_MADNESS;
+						var V_SUCCESS_KILLER_DEAD = story.variablesState.V_SUCCESS_KILLER_DEAD;
+						var V_SUCCESS_KILLER_JAIL = story.variablesState.V_SUCCESS_KILLER_JAIL;
+						var V_SUCCESS_YOU_JAIL = story.variablesState.V_SUCCESS_YOU_JAIL;
+						var V_SUCCESS_DONJUAN = story.variablesState.V_SUCCESS_DONJUAN;
+						var V_SUCCESS_SUCIDAL = story.variablesState.V_SUCCESS_SUCIDAL;
+						// RESTORE GAME
+						story.state.LoadJson(state);
+						//RESTORE SUCCESS
+						story.variablesState.V_SUCCESS_YOU_SURVIVED = successRestore("V_SUCCESS_YOU_SURVIVED",V_SUCCESS_YOU_SURVIVED);
+						story.variablesState.V_SUCCESS_ALL_SURVIVED = successRestore("V_SUCCESS_ALL_SURVIVED",V_SUCCESS_ALL_SURVIVED);
+						story.variablesState.V_SUCCESS_YOU_DIED = successRestore("V_SUCCESS_YOU_DIED",V_SUCCESS_YOU_DIED);
+						story.variablesState.V_SUCCESS_ALL_DIED = successRestore("V_SUCCESS_ALL_DIED",V_SUCCESS_ALL_DIED);
+						story.variablesState.V_SUCCESS_MADNESS = successRestore("V_SUCCESS_MADNESS",V_SUCCESS_MADNESS);
+						story.variablesState.V_SUCCESS_KILLER_DEAD = successRestore("V_SUCCESS_KILLER_DEAD",V_SUCCESS_KILLER_DEAD);
+						story.variablesState.V_SUCCESS_KILLER_JAIL = successRestore("V_SUCCESS_KILLER_JAIL",V_SUCCESS_KILLER_JAIL);
+						story.variablesState.V_SUCCESS_YOU_JAIL = successRestore("V_SUCCESS_YOU_JAIL",V_SUCCESS_YOU_JAIL);
+						story.variablesState.V_SUCCESS_DONJUAN = successRestore("V_SUCCESS_DONJUAN",V_SUCCESS_DONJUAN);
+						story.variablesState.V_SUCCESS_SUCIDAL = successRestore("V_SUCCESS_SUCIDAL",V_SUCCESS_SUCIDAL);
+						removeAll("p");
+						removeAll("img");
+						setVisible(".header", false);
+						continueStory(true);
+					} catch (error) {
+						console.log(error);
+					}
+				});
             }
         }
         input.click();
     }
+	
+	function successRestore(name, oldValue)
+	{
+		var newValue = story.variablesState.$(name);
+		newValue += oldValue;
+		if(newValue > 1)
+		{
+			newValue = 1;
+		}
+		return newValue;
+	}
+	
+	function encrypt (content) {
+		var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+		var b64 = btoa(content);
+		var res = "";
+		for (var i = 0; i < b64.length-1; i++) {
+			res += b64.charAt(i) + characters.charAt(Math.floor(Math.random() * characters.length));
+		}
+		res += b64.charAt(b64.length-1);
+		return res;
+	}
+	
+	async function decrypt (content) {
+		var real64 = ""
+		for (var i = 0; i < content.length; i++) {
+			if( i % 2 == 0)
+			{
+				real64 += content.charAt(i);
+			}
+		}
+		var raw = atob(real64);
+		return raw;
+	}
 
     function showAllSuccessPrize() {
         var button = document.createElement('button');

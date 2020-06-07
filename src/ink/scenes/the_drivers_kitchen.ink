@@ -16,13 +16,14 @@ You sit next to the entrance.
 Few seconds later, the waitress comes to you.
 "What would you like mister ?" #CLASS: others_speak
 You take a look at the menu.
-+ [I'll take a double cheese buger and a diet coke]
-    I'll take a double cheese buger and a diet coke. #CLASS: you_speak
-    No problem, i bring you that in a minute. #CLASS: others_speak
++ [I'll take a double cheese burger and a diet coke]
+    I'll take a double cheese burger and a diet coke. #CLASS: you_speak
+    No problem, I bring you that in a minute. #CLASS: others_speak
     -> eating_at_drivers_kitchen
-+ [Can i have a bacon burger and some water]
-    Can i have a bacon burger and some water. #CLASS: you_speak
-    Ok, i bring you that as soon as possible. #CLASS: others_speak
++ [Can I have a bacon burger and some water]
+    #DBG_SAME_STATE
+    Can I have a bacon burger and some water. #CLASS: you_speak
+    Ok, I bring you that as soon as possible. #CLASS: others_speak
     -> eating_at_drivers_kitchen
 
 === eating_at_drivers_kitchen ===

@@ -7,6 +7,11 @@ Master :
 [![DeepScan grade](https://deepscan.io/api/teams/8790/projects/11002/branches/159303/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=8790&pid=11002&bid=159303)  
 Release :  
 [![Build Status](https://travis-ci.com/miong/MakeYourChoices.svg?branch=release)](https://travis-ci.com/miong/MakeYourChoices)  
+Tools :  
+[![Mergify Status][mergify-status]][mergify]  
+
+[mergify]: https://mergify.io
+[mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/miong/MakeYourChoices&style=flat
 
 ## Compile
 Use the scripts for you operating system.  
@@ -38,5 +43,7 @@ where ACTIVITY could be :
 DEV : any new engine feature  
 DOC : any documentation updates  
 QA  : any quality fix that is not also a bug  
+CFG : change the tools configuration
 FIX : the commit fix a bug from issues  
 STR : the commit concern only the story.  
+REL : the commit is a release (Preview or Release) (on release branch)

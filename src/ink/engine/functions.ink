@@ -39,6 +39,9 @@
     ~ V_HAVE_THE_HAMMER = false
     ~ V_CALLED_THE_COPS = false
 
+=== function next_day ===
+    ~ V_CURRENT_DAY++
+
 === function print_current_time ===
     ~ return print_time(V_CURRENT_TIME)
 
@@ -87,13 +90,29 @@
 === save_or_continu(title, -> current_divert, -> next_divert) ===
 #CLEAR
 {title} #CLASS: story_title_transition
-* [Save game]
++ {!V_E_SAVE_ALREADY_DONE}[Save game]
     // Handled by main.js //
     #CLEAR
     {title} #CLASS: story_title_transition
+    ~ V_E_SAVE_ALREADY_DONE=true
     -> current_divert
 + [Continue]
+    ~ V_E_SAVE_ALREADY_DONE=false
     -> next_divert
+
+=== save_or_continu_with_arg(title, -> current_divert, -> next_divert) ===
+#CLEAR
+{title} #CLASS: story_title_transition
++ {!V_E_SAVE_ALREADY_DONE}[Save game]
+    // Handled by main.js //
+    #CLEAR
+    {title} #CLASS: story_title_transition
+    ~ V_E_SAVE_ALREADY_DONE=true
+    -> current_divert(next_divert)
++ [Continue]
+    ~ V_E_SAVE_ALREADY_DONE=false
+    -> next_divert
+
 
 === function print_list(list, if_empty) 
     {LIST_COUNT(list): 
