@@ -13,6 +13,10 @@ Tools :
 [mergify]: https://mergify.io
 [mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/miong/MakeYourChoices&style=flat
 
+## Discord
+
+join the game community : https://discord.gg/f4g52cs
+
 ## Compile
 Use the scripts for you operating system.  
 Clean : clean build environement  
