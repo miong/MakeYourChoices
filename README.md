@@ -23,6 +23,9 @@ Release : create a release package
 The last release is playable there : https://gmion.itch.io/make-your-choices  
 To play on local build version use your browser to open build/index.html  
 
+## Browser issues
+- Save is not working on Edge (44.18362.449.0)
+
 ## Contribute
 
 ### Issues rules
