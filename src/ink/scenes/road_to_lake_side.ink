@@ -3,12 +3,12 @@
 -> save_or_continu("Road to Lake Side", -> road_to_LS_TT, -> driving_to_LS_part_one)
 
 === driving_to_LS_part_one ===
-Leaving the neighbourhood, you remember all the bad things that happened to you in the last few months.\
+Leaving the neighborhood, you remember all the bad things that happened to you in the last few months.\
 Your girlfriend who left you because you were taking things too seriously.
 "And that the better thing that happened to me lately..." you sigh #CLASS: you_speak
 You thought she was cheating on you but without evidence. But damn, she was beautiful and lovely.\
 That's why you haven't broke up with her before she did.
-However, what really hurt was the lost of your job.\
+However, what really hurted was the lost of your job.\
 Even if there were less customers for the compagny since months, why fire the head of the electronics division ?
 "David, i'm sorry about that but we have to reduce the wage bill...", Thibault said when he summoned you in his office.
 "Fuck off Thibault!" you shout out. #CLASS: you_speak #CLASS: scream

@@ -4,7 +4,7 @@
 
 === comming_to_buy_hammer_first_day ===
 ~ V_CURRENT_TIME += 0.5
-You arrive at lake stuff.
+You arrive at lake stuff. \
 It's {print_current_time()}.
 {
     - V_CURRENT_TIME < 16.00 :
@@ -16,7 +16,7 @@ It's {print_current_time()}.
         ~ V_HAVE_THE_HAMMER = true
     - else :
         But it's already closed.
-        "Arg ! Too bad. I'll have to wait for Monday.." you sigh. #CLASS: you_speak
+        "Arg ! Too bad. I'll have to wait until Monday.." you sigh. #CLASS: you_speak
 }
 + [Continue]
     -> my_house_TT(-> come_back_from_the_center)
