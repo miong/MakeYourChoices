@@ -26,9 +26,9 @@ download_if_not_exist() {
     fi
 }
 
-
+GAME_VERSION=$(grep C_GAME_VERSION src/ink/engine/constantes.ink | awk '{print $4}' | xargs echo)
 project="gmion/make-your-choices"
-artifact="$1"
+artifact="released/myc_${GAME_VERSION}.zip"
 platform="HTML5"
 
 prepare_butler
