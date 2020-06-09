@@ -5,7 +5,7 @@
 
     var audioPlayer = document.getElementById("audio");
     var audioButton = document.getElementById("audioButton");
-    audioPlayer.volume = 0.3;
+    audioPlayer.volume = 0.2;
     var audioMuted = false;
     var currentAudio = ""
     var currentAudioChanged = false;
@@ -198,16 +198,14 @@
                 }
 
                 if (choice.text == "Volume down") {
-                    audioPlayer.volume -= 0.1;
-                    if (audioPlayer.volume < 0) {
-                        audioPlayer.volume = 0;
+                    if (audioPlayer.volume >= 0.1) {
+                        audioPlayer.volume -= 0.1;
                     }
                 }
 
                 if (choice.text == "Volume up") {
-                    audioPlayer.volume += 0.1;
-                    if (audioPlayer.volume > 1) {
-                        audioPlayer.volume = 1;
+                    if (audioPlayer.volume <= 0.9) {
+                        audioPlayer.volume += 0.1;
                     }
                 }
 
