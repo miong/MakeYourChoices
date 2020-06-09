@@ -15,7 +15,7 @@ then
 else
   echo "Making release from build"
   cd build
-  zip test.zip *.*
+  zip -r test.zip *
   cd ..
   mv build/test.zip released/myc_${GAME_VERSION}.zip
 fi
