@@ -2,8 +2,6 @@ language: bash
 
 stages:
   - name: compile
-  - name: bundle
-    if: branch IN (release, test_deploy)
   - name: deploy
     if: branch IN (release, test_deploy)
 
@@ -14,11 +12,12 @@ jobs:
         - sudo apt update
         - sudo apt install mono-complete
         - ./compile.sh
-    - stage: bundle
-      script:
-        - rm -rf released/*
-        - ./release.sh
     - stage: deploy
       script:
+        - sudo apt update
+        - sudo apt install mono-complete
+        - ./compile.sh
+        - rm -rf released/*
+        - ./release.sh
         - chmod +x auto-deploy.sh
-        - ./auto-deploy.sh released/*
+        - ./auto-deploy.sh
