@@ -10,6 +10,7 @@ VAR V_KNOW_FOR_THE_CELLAR = false
 VAR V_LOCKET_FIXED = false
 VAR V_HAVE_THE_HAMMER = false
 VAR V_CALLED_THE_COPS = false
+VAR V_LIGHTS_ON = false
 
 LIST L_ACTORS_ALIVE = (Mike), (Rachelle), (Steve), (Vanessa), (You), (Faceless)
 LIST L_ACTORS_INJAIL = Mike, Rachelle, Steve, Vanessa, You, Faceless

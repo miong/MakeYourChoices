@@ -13,6 +13,10 @@ Tools :
 [mergify]: https://mergify.io
 [mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/miong/MakeYourChoices&style=flat
 
+## Discord
+
+join the game community : https://discord.gg/f4g52cs
+
 ## Compile
 Use the scripts for you operating system.  
 Clean : clean build environement  
@@ -22,6 +26,9 @@ Release : create a release package
 ## Play
 The last release is playable there : https://gmion.itch.io/make-your-choices  
 To play on local build version use your browser to open build/index.html  
+
+## Browser issues
+- Save is not working on Edge (44.18362.449.0)
 
 ## Contribute
 

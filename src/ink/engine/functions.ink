@@ -38,6 +38,7 @@
     ~ V_LOCKET_FIXED = false
     ~ V_HAVE_THE_HAMMER = false
     ~ V_CALLED_THE_COPS = false
+    ~ V_LIGHTS_ON = false
 
 === function next_day ===
     ~ V_CURRENT_DAY++
@@ -204,6 +205,40 @@
         ~ stat = 0
     - else:
         ~ stat += value
+}
+
+=== function kill(actor) ===
+{ actor :
+    - MIKE:
+        ~ L_ACTORS_ALIVE -= L_ACTORS_ALIVE.Mike
+    - STEVE:
+        ~ L_ACTORS_ALIVE -= L_ACTORS_ALIVE.Steve
+    - RACHELLE:
+        ~ L_ACTORS_ALIVE -= L_ACTORS_ALIVE.Rachelle
+    - VANESSA:
+        ~ L_ACTORS_ALIVE -= L_ACTORS_ALIVE.Vanessa
+    - YOU:
+        ~ L_ACTORS_ALIVE -= L_ACTORS_ALIVE.You
+    - FACELESS:
+        ~ L_ACTORS_ALIVE -= L_ACTORS_ALIVE.Faceless
+}
+
+=== function is_alive(actor) ===
+{ actor :
+    - MIKE:
+        ~ return L_ACTORS_ALIVE has L_ACTORS_ALIVE.Mike
+    - STEVE:
+        ~ return L_ACTORS_ALIVE has L_ACTORS_ALIVE.Steve
+    - RACHELLE:
+        ~ return L_ACTORS_ALIVE has L_ACTORS_ALIVE.Rachelle
+    - VANESSA:
+        ~ return L_ACTORS_ALIVE has L_ACTORS_ALIVE.Vanessa
+    - YOU:
+        ~ return L_ACTORS_ALIVE has L_ACTORS_ALIVE.You
+    - FACELESS:
+        ~ return L_ACTORS_ALIVE has L_ACTORS_ALIVE.Faceless
+    - else:
+        ~ return false
 }
 
 === function get_affinity(actor_from,actor_to) ===
