@@ -5,7 +5,7 @@
 ### GAME
 
 * Game creation.
-	Write up to Day 1 end.
+	Write up to Day 2 end.
 	
 ### DEV
 * Setting up envirenement
@@ -14,9 +14,13 @@
 
 ### GAME
 
+* Story : Day 2 availiable
 * Orthographic corrections.
+* Bugfix for volume handling
 
 ### DEV
 
 * Add Travis CI
 * Add DeepScan
+* Prepare unit testing
+* Add story debuger for devs
